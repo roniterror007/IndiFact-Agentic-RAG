@@ -1,0 +1,128 @@
+{
+  "summary": {
+    "cases": 5,
+    "baseline_avg_latency_ms": 43.66,
+    "graph_avg_latency_ms": 91.3,
+    "baseline_avg_status_score": 0.8,
+    "graph_avg_status_score": 0.6
+  },
+  "ragas": {
+    "enabled": true,
+    "scores": {
+      "faithfulness": 0.6,
+      "answer_relevancy": 0.3466942323938579
+    }
+  },
+  "records": [
+    {
+      "query": "Did Chandrayaan-3 soft-land near the lunar south pole on 23 August 2023?",
+      "ground_truth": "Yes, on 23 August 2023.",
+      "baseline_status": "VERIFIED",
+      "graph_status": "VERIFIED",
+      "baseline_answer": "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+      "graph_answer": "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+      "baseline_latency_ms": 61.26,
+      "graph_latency_ms": 78.43,
+      "graph_loop_count": 0,
+      "critic_latency_ms": 0.8201999880839139,
+      "critic_calls": 1,
+      "contexts": [
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023."
+      ],
+      "baseline_score": 1.0,
+      "graph_score": 1.0
+    },
+    {
+      "query": "Did Chandrayaan-3 land in 2024?",
+      "ground_truth": "No, evidence indicates 2023.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 40.0,
+      "graph_latency_ms": 136.06,
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.5773000011686236,
+      "critic_calls": 3,
+      "contexts": [
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "क्या चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास लैंडिंग की?",
+      "ground_truth": "हाँ, 23 अगस्त 2023.",
+      "baseline_status": "VERIFIED",
+      "graph_status": "VERIFIED",
+      "baseline_answer": "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+      "graph_answer": "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+      "baseline_latency_ms": 38.53,
+      "graph_latency_ms": 51.93,
+      "graph_loop_count": 0,
+      "critic_latency_ms": 0.20480001694522798,
+      "critic_calls": 1,
+      "contexts": [
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।"
+      ],
+      "baseline_score": 1.0,
+      "graph_score": 1.0
+    },
+    {
+      "query": "சந்திரயான்-3 2022 இல் தரையிறங்கியதா?",
+      "ground_truth": "இல்லை, ஆதாரம் 2023 என்பதை காட்டுகிறது.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 39.58,
+      "graph_latency_ms": 129.34,
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.540899985935539,
+      "critic_calls": 3,
+      "contexts": [
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "చంద్రయాన్-3 23 ఆగస్టు 2023న దక్షిణ ధ్రువం సమీపంలో ల్యాండైందా?",
+      "ground_truth": "అవును.",
+      "baseline_status": "VERIFIED",
+      "graph_status": "VERIFIED",
+      "baseline_answer": "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+      "graph_answer": "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+      "baseline_latency_ms": 38.94,
+      "graph_latency_ms": 60.72,
+      "graph_loop_count": 0,
+      "critic_latency_ms": 0.1511000155005604,
+      "critic_calls": 1,
+      "contexts": [
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది."
+      ],
+      "baseline_score": 1.0,
+      "graph_score": 1.0
+    }
+  ]
+}
