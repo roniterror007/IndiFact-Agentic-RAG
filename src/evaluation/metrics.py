@@ -54,6 +54,32 @@ def profile_call(func, *args, **kwargs) -> tuple[Any, ComputeStats]:
     )
 
 
+def profile_pipeline_call(func, input_text: str, *args, **kwargs) -> tuple[Any, ComputeStats]:
+    """Profile non-prompt pipeline calls by explicitly providing input text."""
+    input_bytes = len(str(input_text).encode("utf-8"))
+    t0 = time.perf_counter()
+    result = func(*args, **kwargs)
+    latency_ms = (time.perf_counter() - t0) * 1000.0
+
+    output_text = str(result)
+    output_bytes = len(output_text.encode("utf-8"))
+    tokens_in = estimate_tokens(str(input_text))
+    tokens_out = estimate_tokens(output_text)
+    flops_per_byte = estimate_flops_per_byte(tokens_in + tokens_out)
+
+    return (
+        result,
+        ComputeStats(
+            latency_ms=latency_ms,
+            input_bytes=input_bytes,
+            output_bytes=output_bytes,
+            estimated_tokens_in=tokens_in,
+            estimated_tokens_out=tokens_out,
+            flops_per_byte=flops_per_byte,
+        ),
+    )
+
+
 def to_dict(stats: ComputeStats) -> Dict[str, Any]:
     return {
         "latency_ms": round(stats.latency_ms, 2),

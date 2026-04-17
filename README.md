@@ -100,16 +100,31 @@ It loads `datasets/sample_corpus.jsonl` and `datasets/sample_eval.jsonl`, then r
 
 ## LLM and Ragas Configuration
 
-The app can run with a deterministic placeholder model when no LLM credentials are configured, but better results come from a real model.
+The app requires a real LLM configuration. Placeholder fallback has been removed to avoid biased evaluation.
 
 Environment variables:
 
-- `LLM_MODEL` - model name for an OpenAI-compatible API or Ollama.
-- `LLM_API_KEY` - API key for OpenAI-compatible access.
-- `LLM_API_BASE` - API base URL, defaults to the local Ollama-compatible endpoint used by the harness.
+- `LLM_BACKEND` - `ollama` (default) or `openai_compat`.
+- `LLM_MODEL` - required model name used by Analyst.
+- `LLM_API_KEY` - required when `LLM_BACKEND=openai_compat`.
+- `LLM_API_BASE` - API base URL for selected backend.
+- `CRITIC_BACKEND` - optional override for Critic backend (`ollama` or `openai_compat`).
+- `CRITIC_MODEL` - optional dedicated Critic model (recommended for local quantized critics).
+- `CRITIC_API_BASE` - optional Critic API endpoint override.
+- `CRITIC_USE_LLM` - set `1` (default) to run LLM concept-bottleneck checks.
+- `CRITIC_OLLAMA_OPTIONS` - optional JSON object of Ollama generation options.
 - `RAGAS_OLLAMA_LLM_MODEL` - model used by Ragas.
 - `RAGAS_OLLAMA_EMBED_MODEL` - embedding model used by Ragas.
 - `CRITIC_MODEL_PARAMS` - optional critic model size hint for compute estimates.
+
+Example (local Ollama with quantized critic):
+
+```powershell
+$env:LLM_BACKEND="ollama"
+$env:LLM_MODEL="llama3.1:8b"
+$env:CRITIC_MODEL="llama3.1:8b-instruct-q4_K_M"
+$env:CRITIC_OLLAMA_OPTIONS='{"num_ctx": 2048, "num_predict": 256}'
+```
 
 If you want to use Ragas locally with Ollama, pull the models first:
 
@@ -122,10 +137,23 @@ ollama pull nomic-embed-text
 
 1. The user submits a claim.
 2. The Searcher retrieves evidence with hybrid dense and sparse search.
-3. The Analyst turns the evidence into a strict JSON answer.
-4. The Critic checks whether the answer is grounded and consistent.
-5. If the Critic rejects the answer, the graph loops back to retrieval.
-6. After three failed loops, the system returns `CANNOT_VERIFY`.
+   - **Confidence filtering**: Results below RRF score 0.02 flagged as LOW_CONFIDENCE.
+   - Low-confidence matches handled gracefully (marked KNOWLEDGE_GAP rather than returned irrelevantly).
+3. The Analyst analyzes evidence with improved prompt tuning:
+   - Directly answers queries if evidence is present, even if partial.
+   - Marks KNOWLEDGE_GAP only when evidence is absent/irrelevant/contradictory.
+   - Includes decision rules to increase VERIFIED rate for critic engagement.
+4. If Analyst returns `KNOWLEDGE_GAP`, the graph routes directly back to Searcher (max 3 loops).
+5. If Analyst returns `VERIFIED`, the Critic runs concept bottleneck checks.
+6. If Critic rejects, the graph loops back to retrieval.
+7. After three failed loops, the system returns `CANNOT_VERIFY`.
+
+## Recent Improvements
+
+- **Analyst Prompt Tuning** (v2): Enhanced prompt with explicit decision rules to reduce over-conservative KNOWLEDGE_GAP classification. Now uses partial evidence and contextual reasoning.
+- **Confidence-Based Filtering**: Searcher detects low-confidence matches (RRF < 0.02) and returns appropriate status flags.
+- **Expanded Corpus**: Added 8 multilingual sports documents (FIFA World Cup, Cricket World Cup) for broader query coverage.
+- **Graceful Degradation**: Out-of-corpus queries no longer return irrelevant tangential results; system acknowledges information gaps.
 
 ## Persistent Storage
 

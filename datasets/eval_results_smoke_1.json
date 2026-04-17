@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "cases": 1,
+    "baseline_avg_latency_ms": 7932.83,
+    "graph_avg_latency_ms": 8601.07,
+    "baseline_avg_status_score": 0.5,
+    "graph_avg_status_score": 0.0,
+    "baseline_avg_flops_per_byte": 4000000000.0,
+    "graph_avg_flops_per_byte": 4000000000.0
+  },
+  "ragas": {
+    "enabled": true,
+    "scores": {
+      "faithfulness": 0.25,
+      "answer_relevancy": null
+    }
+  },
+  "records": [
+    {
+      "query": "Did GST launch in India on 1 July 2017?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 7932.83,
+      "graph_latency_ms": 8601.07,
+      "baseline_compute": {
+        "latency_ms": 7932.83,
+        "input_bytes": 39,
+        "output_bytes": 2220,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 493,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 8601.07,
+        "input_bytes": 39,
+        "output_bytes": 9245,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 2065,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform.",
+        "இந்தியாவில் ஜிஎஸ்டி (GST) 1 ஜூலை 2017 அன்று அமல்படுத்தப்பட்டது.",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।",
+        "భారతదేశంలో జీఎస్టీ 1 జూలై 2017న అమల్లోకి వచ్చింది.",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    }
+  ]
+}

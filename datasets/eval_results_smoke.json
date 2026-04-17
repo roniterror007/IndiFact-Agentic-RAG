@@ -1,0 +1,210 @@
+{
+  "summary": {
+    "cases": 5,
+    "baseline_avg_latency_ms": 2073.43,
+    "graph_avg_latency_ms": 6228.8,
+    "baseline_avg_status_score": 0.5,
+    "graph_avg_status_score": 0.0,
+    "baseline_avg_flops_per_byte": 4000000000.0,
+    "graph_avg_flops_per_byte": 4000000000.0
+  },
+  "ragas": {
+    "enabled": true,
+    "scores": {
+      "faithfulness": null,
+      "answer_relevancy": null
+    }
+  },
+  "records": [
+    {
+      "query": "Did GST launch in India on 1 July 2017?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 2120.8,
+      "graph_latency_ms": 6216.78,
+      "baseline_compute": {
+        "latency_ms": 2120.8,
+        "input_bytes": 39,
+        "output_bytes": 2316,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 517,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 6216.78,
+        "input_bytes": 39,
+        "output_bytes": 9531,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 2136,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform.",
+        "இந்தியாவில் ஜிஎஸ்டி (GST) 1 ஜூலை 2017 அன்று அமல்படுத்தப்பட்டது.",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।",
+        "భారతదేశంలో జీఎస్టీ 1 జూలై 2017న అమల్లోకి వచ్చింది.",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was GST launched in 2020?",
+      "ground_truth": "No, it launched in 2017.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 2080.85,
+      "graph_latency_ms": 6216.21,
+      "baseline_compute": {
+        "latency_ms": 2080.85,
+        "input_bytes": 25,
+        "output_bytes": 2177,
+        "estimated_tokens_in": 6,
+        "estimated_tokens_out": 481,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 6216.21,
+        "input_bytes": 25,
+        "output_bytes": 9020,
+        "estimated_tokens_in": 6,
+        "estimated_tokens_out": 2005,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform.",
+        "இந்தியாவில் ஜிஎஸ்டி (GST) 1 ஜூலை 2017 அன்று அமல்படுத்தப்பட்டது.",
+        "राष्ट्रीय शिक्षा नीति 2020 को जुलाई 2020 में मंजूरी दी गई।",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।",
+        "India's National Education Policy (NEP) 2020 was approved in July 2020."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did India host the G20 Leaders' Summit in New Delhi on 9-10 September 2023?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 2046.84,
+      "graph_latency_ms": 6231.09,
+      "baseline_compute": {
+        "latency_ms": 2046.84,
+        "input_bytes": 75,
+        "output_bytes": 2614,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 547,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 6231.09,
+        "input_bytes": 75,
+        "output_bytes": 10617,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 2228,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "இந்தியா 2023ல் G20 தலைமை வகித்தது; தலைவர்கள் உச்சி மாநாடு 9-10 செப்டம்பர் 2023 அன்று நியூ டெல்லியில் நடைபெற்றது.",
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది.",
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।",
+        "ISRO launched Aditya-L1 on 2 September 2023 to study the Sun from a halo orbit around the L1 point."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "क्या भारत ने 2023 में जी20 अध्यक्षता संभाली थी?",
+      "ground_truth": "हाँ।",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 2050.51,
+      "graph_latency_ms": 6222.84,
+      "baseline_compute": {
+        "latency_ms": 2050.51,
+        "input_bytes": 111,
+        "output_bytes": 2541,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 501,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 6222.84,
+        "input_bytes": 111,
+        "output_bytes": 10217,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 2068,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది.",
+        "CoWIN डिजिटल प्लेटफॉर्म का व्यापक उपयोग 2021 में भारत के कोविड-19 टीकाकरण अभियान में हुआ।",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।"
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "చంద్రయాన్-3 23 ఆగస్టు 2023న దక్షిణ ధ్రువం సమీపంలో ల్యాండైందా?",
+      "ground_truth": "అవును.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 2068.17,
+      "graph_latency_ms": 6257.06,
+      "baseline_compute": {
+        "latency_ms": 2068.17,
+        "input_bytes": 151,
+        "output_bytes": 2807,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 543,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 6257.06,
+        "input_bytes": 151,
+        "output_bytes": 11160,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 2223,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "జల్ జీవన్ మిషన్ ఆగస్టు 2019లో ప్రకటించబడింది; గ్రామీణ ఇళ్లకు ట్యాప్ నీటి కనెక్షన్ లక్ష్యం.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    }
+  ]
+}

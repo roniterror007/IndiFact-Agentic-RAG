@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 from src.evaluation.baseline import run_naive_baseline
+from src.evaluation.metrics import profile_pipeline_call, to_dict
 from src.orchestration.graph import run_query
 from src.retrieval.indexer import IndicHybridIndexer
 
@@ -134,28 +135,41 @@ def run_evaluation_harness(
     corpus = _load_jsonl(Path(corpus_path))
     claims = _load_jsonl(Path(claims_path))
 
-    idx = IndicHybridIndexer(collection_name="indifact_eval_harness")
+    run_collection = f"indifact_eval_harness_{int(time.time())}"
+    idx = IndicHybridIndexer(collection_name=run_collection)
     idx.add_documents(corpus)
 
     records: List[Dict[str, Any]] = []
     baseline_total = 0.0
     graph_total = 0.0
+    baseline_flops_per_byte_total = 0.0
+    graph_flops_per_byte_total = 0.0
 
     for item in claims:
         query = str(item.get("query", "")).strip()
         if not query:
             continue
 
-        t0 = time.perf_counter()
-        baseline = run_naive_baseline(idx, query)
-        baseline_ms = (time.perf_counter() - t0) * 1000.0
+        baseline, baseline_compute = profile_pipeline_call(
+            run_naive_baseline,
+            query,
+            idx,
+            query,
+        )
+        baseline_ms = baseline_compute.latency_ms
 
-        t1 = time.perf_counter()
-        graph = run_query(idx, query)
-        graph_ms = (time.perf_counter() - t1) * 1000.0
+        graph, graph_compute = profile_pipeline_call(
+            run_query,
+            query,
+            idx,
+            query,
+        )
+        graph_ms = graph_compute.latency_ms
 
         baseline_total += baseline_ms
         graph_total += graph_ms
+        baseline_flops_per_byte_total += baseline_compute.flops_per_byte
+        graph_flops_per_byte_total += graph_compute.flops_per_byte
 
         baseline_status = _safe_get_status(baseline)
         graph_status = _safe_get_status(graph)
@@ -171,6 +185,8 @@ def run_evaluation_harness(
                 "graph_answer": graph.get("draft_answer", {}).get("answer", ""),
                 "baseline_latency_ms": round(baseline_ms, 2),
                 "graph_latency_ms": round(graph_ms, 2),
+                "baseline_compute": to_dict(baseline_compute),
+                "graph_compute": to_dict(graph_compute),
                 "graph_loop_count": graph.get("loop_count", 0),
                 "critic_latency_ms": graph.get("metrics", {}).get("critic_latency_ms", 0.0),
                 "critic_calls": graph.get("metrics", {}).get("critic_calls", 0),
@@ -189,6 +205,12 @@ def run_evaluation_harness(
         ),
         "graph_avg_status_score": round(
             sum(r["graph_score"] for r in records) / max(1, len(records)), 4
+        ),
+        "baseline_avg_flops_per_byte": round(
+            baseline_flops_per_byte_total / max(1, len(records)), 4
+        ),
+        "graph_avg_flops_per_byte": round(
+            graph_flops_per_byte_total / max(1, len(records)), 4
         ),
     }
 

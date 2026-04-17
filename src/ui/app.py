@@ -24,7 +24,12 @@ def _init_indexer() -> IndicHybridIndexer:
 
 def _init_graph(idx: IndicHybridIndexer):
     if "compiled_graph" not in st.session_state:
-        st.session_state.compiled_graph = build_graph(idx)
+        try:
+            st.session_state.compiled_graph = build_graph(idx)
+            st.session_state.graph_error = ""
+        except RuntimeError as e:
+            st.session_state.compiled_graph = None
+            st.session_state.graph_error = str(e)
     return st.session_state.compiled_graph
 
 
@@ -65,6 +70,17 @@ def _seed_demo_corpus(idx: IndicHybridIndexer) -> None:
     st.success(f"Demo corpus indexed with {demo_chunk_count} chunks.")
 
 
+def _load_full_corpus(idx: IndicHybridIndexer) -> None:
+    from src.data.curation import load_jsonl_documents
+    corpus_path = "datasets/sample_corpus.jsonl"
+    try:
+        docs = load_jsonl_documents(corpus_path)
+        chunk_count = idx.add_documents(docs)
+        st.success(f"Full corpus loaded with {chunk_count} chunks from {len(docs)} documents.")
+    except FileNotFoundError:
+        st.error(f"Corpus file not found: {corpus_path}")
+
+
 indexer = _init_indexer()
 compiled_graph = _init_graph(indexer)
 
@@ -78,8 +94,21 @@ with st.sidebar:
     )
     if st.button("Index Demo Multilingual Corpus"):
         _seed_demo_corpus(indexer)
-        st.session_state.compiled_graph = build_graph(indexer)
-        st.session_state.compiled_graph = st.session_state.compiled_graph
+        try:
+            st.session_state.compiled_graph = build_graph(indexer)
+            st.session_state.graph_error = ""
+        except RuntimeError as e:
+            st.session_state.compiled_graph = None
+            st.session_state.graph_error = str(e)
+
+    if st.button("Load Full Sample Corpus (34 docs)"):
+        _load_full_corpus(indexer)
+        try:
+            st.session_state.compiled_graph = build_graph(indexer)
+            st.session_state.graph_error = ""
+        except RuntimeError as e:
+            st.session_state.compiled_graph = None
+            st.session_state.graph_error = str(e)
 
     raw_corpus = st.text_area(
         "Add custom corpus as JSON list",
@@ -94,10 +123,25 @@ with st.sidebar:
                 raise ValueError("JSON must be a list of documents.")
             custom_chunk_count = indexer.add_documents(parsed)
             st.success(f"Indexed {custom_chunk_count} chunks.")
-            st.session_state.compiled_graph = build_graph(indexer)
-            st.session_state.compiled_graph = st.session_state.compiled_graph
+            try:
+                st.session_state.compiled_graph = build_graph(indexer)
+                st.session_state.graph_error = ""
+            except RuntimeError as e:
+                st.session_state.compiled_graph = None
+                st.session_state.graph_error = str(e)
         except (json.JSONDecodeError, ValueError) as e:
             st.error(f"Failed to index corpus: {e}")
+
+    graph_error = st.session_state.get("graph_error", "")
+    if graph_error:
+        st.error(
+            "Graph is not ready. Configure LLM environment variables and reload. "
+            f"Details: {graph_error}"
+        )
+        st.caption(
+            "Required at minimum: LLM_BACKEND=ollama and LLM_MODEL=<your-model>. "
+            "Optional quantized critic: CRITIC_MODEL=<quantized-model-name>."
+        )
 
     st.subheader("Evaluation")
     if st.button("Run Baseline vs Graph Harness"):
@@ -148,6 +192,11 @@ run_btn = st.button("Run Agentic Fact-Check", type="primary")
 if run_btn:
     if indexer.chunk_count() == 0:
         st.warning("No corpus is indexed yet. Click 'Index Demo Multilingual Corpus' or add custom corpus first.")
+    elif compiled_graph is None:
+        st.error(
+            "Graph is unavailable due to LLM configuration. Set LLM_BACKEND/LLM_MODEL "
+            "(and LLM_API_KEY for openai_compat), then rerun."
+        )
     elif not query.strip():
         st.warning("Please enter a query.")
     else:

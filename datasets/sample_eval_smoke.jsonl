@@ -1,0 +1,5 @@
+{"query":"Did GST launch in India on 1 July 2017?","ground_truth":"Yes."}
+{"query":"Was GST launched in 2020?","ground_truth":"No, it launched in 2017."}
+{"query":"Did India host the G20 Leaders' Summit in New Delhi on 9-10 September 2023?","ground_truth":"Yes."}
+{"query":"क्या भारत ने 2023 में जी20 अध्यक्षता संभाली थी?","ground_truth":"हाँ।"}
+{"query":"చంద్రయాన్-3 23 ఆగస్టు 2023న దక్షిణ ధ్రువం సమీపంలో ల్యాండైందా?","ground_truth":"అవును."}

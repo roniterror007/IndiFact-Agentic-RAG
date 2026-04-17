@@ -1,103 +1,1347 @@
 {
   "summary": {
-    "cases": 5,
-    "baseline_avg_latency_ms": 43.66,
-    "graph_avg_latency_ms": 91.3,
-    "baseline_avg_status_score": 0.8,
-    "graph_avg_status_score": 0.6
+    "cases": 40,
+    "baseline_avg_latency_ms": 6356.48,
+    "graph_avg_latency_ms": 10047.56,
+    "baseline_avg_status_score": 0.5,
+    "graph_avg_status_score": 0.0,
+    "baseline_avg_flops_per_byte": 4000000000.0,
+    "graph_avg_flops_per_byte": 4000000000.0
   },
   "ragas": {
     "enabled": true,
     "scores": {
-      "faithfulness": 0.6,
-      "answer_relevancy": 0.3466942323938579
+      "faithfulness": 0.29259259259259257,
+      "answer_relevancy": 0.37561733072251846
     }
   },
   "records": [
     {
       "query": "Did Chandrayaan-3 soft-land near the lunar south pole on 23 August 2023?",
-      "ground_truth": "Yes, on 23 August 2023.",
-      "baseline_status": "VERIFIED",
-      "graph_status": "VERIFIED",
-      "baseline_answer": "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
-      "graph_answer": "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
-      "baseline_latency_ms": 61.26,
-      "graph_latency_ms": 78.43,
-      "graph_loop_count": 0,
-      "critic_latency_ms": 0.8201999880839139,
-      "critic_calls": 1,
-      "contexts": [
-        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
-        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
-        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
-        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
-        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023."
-      ],
-      "baseline_score": 1.0,
-      "graph_score": 1.0
-    },
-    {
-      "query": "Did Chandrayaan-3 land in 2024?",
-      "ground_truth": "No, evidence indicates 2023.",
+      "ground_truth": "Yes.",
       "baseline_status": "KNOWLEDGE_GAP",
       "graph_status": "CANNOT_VERIFY",
       "baseline_answer": "",
       "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
-      "baseline_latency_ms": 40.0,
-      "graph_latency_ms": 136.06,
+      "baseline_latency_ms": 6237.77,
+      "graph_latency_ms": 9197.93,
+      "baseline_compute": {
+        "latency_ms": 6237.77,
+        "input_bytes": 72,
+        "output_bytes": 2476,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 522,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 9197.93,
+        "input_bytes": 72,
+        "output_bytes": 10171,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 2154,
+        "flops_per_byte": 4000000000.0
+      },
       "graph_loop_count": 3,
-      "critic_latency_ms": 0.5773000011686236,
-      "critic_calls": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
       "contexts": [
         "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+        "ISRO launched Aditya-L1 on 2 September 2023 to study the Sun from a halo orbit around the L1 point."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did Chandrayaan-3 land in 2024?",
+      "ground_truth": "No, it landed in 2023.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 7245.36,
+      "graph_latency_ms": 8967.17,
+      "baseline_compute": {
+        "latency_ms": 7245.36,
+        "input_bytes": 31,
+        "output_bytes": 2628,
+        "estimated_tokens_in": 7,
+        "estimated_tokens_out": 516,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 8967.17,
+        "input_bytes": 31,
+        "output_bytes": 10901,
+        "estimated_tokens_in": 7,
+        "estimated_tokens_out": 2161,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
         "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది.",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was ISRO's Aditya-L1 launched on 2 September 2023?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6333.14,
+      "graph_latency_ms": 9337.01,
+      "baseline_compute": {
+        "latency_ms": 6333.14,
+        "input_bytes": 50,
+        "output_bytes": 2556,
+        "estimated_tokens_in": 12,
+        "estimated_tokens_out": 529,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 9337.01,
+        "input_bytes": 50,
+        "output_bytes": 10556,
+        "estimated_tokens_in": 12,
+        "estimated_tokens_out": 2199,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "ISRO launched Aditya-L1 on 2 September 2023 to study the Sun from a halo orbit around the L1 point.",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది.",
         "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
-        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "आदित्य-एल1 मिशन 2 सितंबर 2023 को लॉन्च किया गया और जनवरी 2024 में L1 के पास हेलो ऑर्बिट में स्थापित हुआ।"
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did Aditya-L1 enter halo orbit near L1 in January 2024?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6689.52,
+      "graph_latency_ms": 8998.11,
+      "baseline_compute": {
+        "latency_ms": 6689.52,
+        "input_bytes": 55,
+        "output_bytes": 2549,
+        "estimated_tokens_in": 13,
+        "estimated_tokens_out": 527,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 8998.11,
+        "input_bytes": 55,
+        "output_bytes": 10514,
+        "estimated_tokens_in": 13,
+        "estimated_tokens_out": 2188,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "ISRO launched Aditya-L1 on 2 September 2023 to study the Sun from a halo orbit around the L1 point.",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది.",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "आदित्य-एल1 मिशन 2 सितंबर 2023 को लॉन्च किया गया और जनवरी 2024 में L1 के पास हेलो ऑर्बिट में स्थापित हुआ।",
         "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023."
       ],
       "baseline_score": 0.5,
       "graph_score": 0.0
     },
     {
-      "query": "क्या चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास लैंडिंग की?",
-      "ground_truth": "हाँ, 23 अगस्त 2023.",
-      "baseline_status": "VERIFIED",
-      "graph_status": "VERIFIED",
-      "baseline_answer": "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
-      "graph_answer": "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
-      "baseline_latency_ms": 38.53,
-      "graph_latency_ms": 51.93,
-      "graph_loop_count": 0,
-      "critic_latency_ms": 0.20480001694522798,
-      "critic_calls": 1,
-      "contexts": [
-        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
-        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
-        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
-        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
-        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।"
-      ],
-      "baseline_score": 1.0,
-      "graph_score": 1.0
-    },
-    {
-      "query": "சந்திரயான்-3 2022 இல் தரையிறங்கியதா?",
-      "ground_truth": "இல்லை, ஆதாரம் 2023 என்பதை காட்டுகிறது.",
+      "query": "Did Aditya-L1 launch in 2022?",
+      "ground_truth": "No, launch year is 2023.",
       "baseline_status": "KNOWLEDGE_GAP",
       "graph_status": "CANNOT_VERIFY",
       "baseline_answer": "",
       "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
-      "baseline_latency_ms": 39.58,
-      "graph_latency_ms": 129.34,
+      "baseline_latency_ms": 6236.85,
+      "graph_latency_ms": 9058.46,
+      "baseline_compute": {
+        "latency_ms": 6236.85,
+        "input_bytes": 29,
+        "output_bytes": 2490,
+        "estimated_tokens_in": 7,
+        "estimated_tokens_out": 512,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 9058.46,
+        "input_bytes": 29,
+        "output_bytes": 10356,
+        "estimated_tokens_in": 7,
+        "estimated_tokens_out": 2149,
+        "flops_per_byte": 4000000000.0
+      },
       "graph_loop_count": 3,
-      "critic_latency_ms": 0.540899985935539,
-      "critic_calls": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "ISRO launched Aditya-L1 on 2 September 2023 to study the Sun from a halo orbit around the L1 point.",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది.",
+        "आदित्य-एल1 मिशन 2 सितंबर 2023 को लॉन्च किया गया और जनवरी 2024 में L1 के पास हेलो ऑर्बिट में स्थापित हुआ।",
+        "The Jal Jeevan Mission was announced in August 2019 to provide functional household tap connections in rural areas."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did India host the G20 Leaders' Summit in New Delhi on 9-10 September 2023?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6241.34,
+      "graph_latency_ms": 9227.52,
+      "baseline_compute": {
+        "latency_ms": 6241.34,
+        "input_bytes": 75,
+        "output_bytes": 2518,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 523,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 9227.52,
+        "input_bytes": 75,
+        "output_bytes": 10330,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 2156,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "இந்தியா 2023ல் G20 தலைமை வகித்தது; தலைவர்கள் உச்சி மாநாடு 9-10 செப்டம்பர் 2023 அன்று நியூ டெல்லியில் நடைபெற்றது.",
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది.",
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।",
+        "ISRO launched Aditya-L1 on 2 September 2023 to study the Sun from a halo orbit around the L1 point."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was the G20 summit hosted in Mumbai in 2023?",
+      "ground_truth": "No, it was hosted in New Delhi.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6052.99,
+      "graph_latency_ms": 8973.27,
+      "baseline_compute": {
+        "latency_ms": 6052.99,
+        "input_bytes": 44,
+        "output_bytes": 2409,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 495,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 8973.27,
+        "input_bytes": 44,
+        "output_bytes": 9992,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 2072,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "இந்தியா 2023ல் G20 தலைமை வகித்தது; தலைவர்கள் உச்சி மாநாடு 9-10 செப்டம்பர் 2023 அன்று நியூ டெல்லியில் நடைபெற்றது.",
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।",
+        "The Jal Jeevan Mission was announced in August 2019 to provide functional household tap connections in rural areas.",
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was India the G20 Presidency holder in 2023?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6043.74,
+      "graph_latency_ms": 9265.02,
+      "baseline_compute": {
+        "latency_ms": 6043.74,
+        "input_bytes": 44,
+        "output_bytes": 2302,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 500,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 9265.02,
+        "input_bytes": 44,
+        "output_bytes": 9558,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 2087,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "இந்தியா 2023ல் G20 தலைமை வகித்தது; தலைவர்கள் உச்சி மாநாடு 9-10 செப்டம்பர் 2023 அன்று நியூ டெல்லியில் நடைபெற்றது.",
+        "India's National Education Policy (NEP) 2020 was approved in July 2020.",
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది.",
+        "The CoWIN digital platform was widely used to manage India's COVID-19 vaccination rollout in 2021."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did GST launch in India on 1 July 2017?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5203.01,
+      "graph_latency_ms": 8906.84,
+      "baseline_compute": {
+        "latency_ms": 5203.01,
+        "input_bytes": 39,
+        "output_bytes": 2220,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 493,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 8906.84,
+        "input_bytes": 39,
+        "output_bytes": 9246,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 2065,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform.",
+        "இந்தியாவில் ஜிஎஸ்டி (GST) 1 ஜூலை 2017 அன்று அமல்படுத்தப்பட்டது.",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।",
+        "భారతదేశంలో జీఎస్టీ 1 జూలై 2017న అమల్లోకి వచ్చింది.",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was GST launched in 2020?",
+      "ground_truth": "No, it launched in 2017.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 4578.96,
+      "graph_latency_ms": 8847.4,
+      "baseline_compute": {
+        "latency_ms": 4578.96,
+        "input_bytes": 25,
+        "output_bytes": 2081,
+        "estimated_tokens_in": 6,
+        "estimated_tokens_out": 457,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 8847.4,
+        "input_bytes": 25,
+        "output_bytes": 8732,
+        "estimated_tokens_in": 6,
+        "estimated_tokens_out": 1933,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform.",
+        "இந்தியாவில் ஜிஎஸ்டி (GST) 1 ஜூலை 2017 அன்று அமல்படுத்தப்பட்டது.",
+        "राष्ट्रीय शिक्षा नीति 2020 को जुलाई 2020 में मंजूरी दी गई।",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।",
+        "India's National Education Policy (NEP) 2020 was approved in July 2020."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Were Article 370 special status provisions effectively revoked on 5 August 2019?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5493.65,
+      "graph_latency_ms": 8906.34,
+      "baseline_compute": {
+        "latency_ms": 5493.65,
+        "input_bytes": 80,
+        "output_bytes": 2225,
+        "estimated_tokens_in": 20,
+        "estimated_tokens_out": 471,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 8906.34,
+        "input_bytes": 80,
+        "output_bytes": 9143,
+        "estimated_tokens_in": 20,
+        "estimated_tokens_out": 1945,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The special status provisions under Article 370 were effectively revoked on 5 August 2019.",
+        "अनुच्छेद 370 के विशेष प्रावधान 5 अगस्त 2019 को प्रभावी रूप से हटाए गए।",
+        "భారతదేశంలో జీఎస్టీ 1 జూలై 2017న అమల్లోకి వచ్చింది.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was Article 370 revoked in 2017?",
+      "ground_truth": "No, it was in 2019.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5007.28,
+      "graph_latency_ms": 8840.42,
+      "baseline_compute": {
+        "latency_ms": 5007.28,
+        "input_bytes": 32,
+        "output_bytes": 2057,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 448,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 8840.42,
+        "input_bytes": 32,
+        "output_bytes": 8614,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 1889,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The special status provisions under Article 370 were effectively revoked on 5 August 2019.",
+        "இந்தியாவில் ஜிஎஸ்டி (GST) 1 ஜூலை 2017 அன்று அமல்படுத்தப்பட்டது.",
+        "अनुच्छेद 370 के विशेष प्रावधान 5 अगस्त 2019 को प्रभावी रूप से हटाए गए।",
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform.",
+        "భారతదేశంలో జీఎస్టీ 1 జూలై 2017న అమల్లోకి వచ్చింది."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was PM-KISAN launched in February 2019?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5263.36,
+      "graph_latency_ms": 9072.54,
+      "baseline_compute": {
+        "latency_ms": 5263.36,
+        "input_bytes": 39,
+        "output_bytes": 2171,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 467,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 9072.54,
+        "input_bytes": 39,
+        "output_bytes": 9050,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 1962,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "PM-KISAN திட்டம் தகுதியான விவசாய குடும்பங்களுக்கு 2019 பிப்ரவரியில் தொடங்கப்பட்டது.",
+        "PM-KISAN, an income support scheme for eligible farmer families, was launched in February 2019.",
+        "PM-KISAN పథకం అర్హులైన రైతు కుటుంబాల కోసం 2019 ఫిబ్రవరిలో ప్రారంభించబడింది.",
+        "पीएम-किसान योजना फरवरी 2019 में शुरू की गई थी।",
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did PM-KISAN start in 2021?",
+      "ground_truth": "No, it started in 2019.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5714.04,
+      "graph_latency_ms": 10297.86,
+      "baseline_compute": {
+        "latency_ms": 5714.04,
+        "input_bytes": 27,
+        "output_bytes": 2160,
+        "estimated_tokens_in": 6,
+        "estimated_tokens_out": 465,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10297.86,
+        "input_bytes": 27,
+        "output_bytes": 9044,
+        "estimated_tokens_in": 6,
+        "estimated_tokens_out": 1961,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "PM-KISAN திட்டம் தகுதியான விவசாய குடும்பங்களுக்கு 2019 பிப்ரவரியில் தொடங்கப்பட்டது.",
+        "PM-KISAN, an income support scheme for eligible farmer families, was launched in February 2019.",
+        "PM-KISAN పథకం అర్హులైన రైతు కుటుంబాల కోసం 2019 ఫిబ్రవరిలో ప్రారంభించబడింది.",
+        "पीएम-किसान योजना फरवरी 2019 में शुरू की गई थी।",
+        "The CoWIN digital platform was widely used to manage India's COVID-19 vaccination rollout in 2021."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was Jal Jeevan Mission announced in August 2019?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5558.59,
+      "graph_latency_ms": 10149.89,
+      "baseline_compute": {
+        "latency_ms": 5558.59,
+        "input_bytes": 48,
+        "output_bytes": 2287,
+        "estimated_tokens_in": 12,
+        "estimated_tokens_out": 494,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10149.89,
+        "input_bytes": 48,
+        "output_bytes": 9488,
+        "estimated_tokens_in": 12,
+        "estimated_tokens_out": 2064,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The Jal Jeevan Mission was announced in August 2019 to provide functional household tap connections in rural areas.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "आदित्य-एल1 मिशन 2 सितंबर 2023 को लॉन्च किया गया और जनवरी 2024 में L1 के पास हेलो ऑर्बिट में स्थापित हुआ।",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "PM-KISAN, an income support scheme for eligible farmer families, was launched in February 2019."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did Jal Jeevan Mission launch in 2018?",
+      "ground_truth": "No, it was announced in 2019.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5650.4,
+      "graph_latency_ms": 10197.17,
+      "baseline_compute": {
+        "latency_ms": 5650.4,
+        "input_bytes": 38,
+        "output_bytes": 2298,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 497,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10197.17,
+        "input_bytes": 38,
+        "output_bytes": 9559,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 2081,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The Jal Jeevan Mission was announced in August 2019 to provide functional household tap connections in rural areas.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "आदित्य-एल1 मिशन 2 सितंबर 2023 को लॉन्च किया गया और जनवरी 2024 में L1 के पास हेलो ऑर्बिट में स्थापित हुआ।",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was NEP 2020 approved in July 2020?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5329.87,
+      "graph_latency_ms": 10092.59,
+      "baseline_compute": {
+        "latency_ms": 5329.87,
+        "input_bytes": 35,
+        "output_bytes": 2130,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 470,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10092.59,
+        "input_bytes": 35,
+        "output_bytes": 8899,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 1974,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "India's National Education Policy (NEP) 2020 was approved in July 2020.",
+        "राष्ट्रीय शिक्षा नीति 2020 को जुलाई 2020 में मंजूरी दी गई।",
+        "இந்திய தேசிய கல்விக் கொள்கை 2020, ஜூலை 2020ல் அங்கீகரிக்கப்பட்டது.",
+        "జాతీయ విద్యా విధానం 2020 జూలై 2020లో ఆమోదించబడింది.",
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was NEP 2020 approved in 2019?",
+      "ground_truth": "No, approval was in 2020.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5300.47,
+      "graph_latency_ms": 10138.29,
+      "baseline_compute": {
+        "latency_ms": 5300.47,
+        "input_bytes": 30,
+        "output_bytes": 2112,
+        "estimated_tokens_in": 7,
+        "estimated_tokens_out": 465,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10138.29,
+        "input_bytes": 30,
+        "output_bytes": 8841,
+        "estimated_tokens_in": 7,
+        "estimated_tokens_out": 1960,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "India's National Education Policy (NEP) 2020 was approved in July 2020.",
+        "राष्ट्रीय शिक्षा नीति 2020 को जुलाई 2020 में मंजूरी दी गई।",
+        "జాతీయ విద్యా విధానం 2020 జూలై 2020లో ఆమోదించబడింది.",
+        "இந்திய தேசிய கல்விக் கொள்கை 2020, ஜூலை 2020ல் அங்கீகரிக்கப்பட்டது.",
+        "The Jal Jeevan Mission was announced in August 2019 to provide functional household tap connections in rural areas."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was CoWIN widely used for India's vaccination rollout in 2021?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5205.23,
+      "graph_latency_ms": 10139.64,
+      "baseline_compute": {
+        "latency_ms": 5205.23,
+        "input_bytes": 62,
+        "output_bytes": 2231,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 492,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10139.64,
+        "input_bytes": 62,
+        "output_bytes": 9226,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 2046,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The CoWIN digital platform was widely used to manage India's COVID-19 vaccination rollout in 2021.",
+        "CoWIN डिजिटल प्लेटफॉर्म का व्यापक उपयोग 2021 में भारत के कोविड-19 टीकाकरण अभियान में हुआ।",
+        "இந்தியாவின் COVID-19 தடுப்பூசி இயக்கத்தில் 2021ஆம் ஆண்டு CoWIN தளம் பரவலாக பயன்படுத்தப்பட்டது.",
+        "India's National Education Policy (NEP) 2020 was approved in July 2020.",
+        "PM-KISAN, an income support scheme for eligible farmer families, was launched in February 2019."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was CoWIN primarily introduced for vaccination rollout in 2018?",
+      "ground_truth": "No, evidence supports 2021 usage.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5846.5,
+      "graph_latency_ms": 10165.05,
+      "baseline_compute": {
+        "latency_ms": 5846.5,
+        "input_bytes": 63,
+        "output_bytes": 2360,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 496,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10165.05,
+        "input_bytes": 63,
+        "output_bytes": 9737,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 2060,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The CoWIN digital platform was widely used to manage India's COVID-19 vaccination rollout in 2021.",
+        "இந்தியாவின் COVID-19 தடுப்பூசி இயக்கத்தில் 2021ஆம் ஆண்டு CoWIN தளம் பரவலாக பயன்படுத்தப்பட்டது.",
+        "భారతదేశ COVID-19 టీకా కార్యక్రమం 2021లో CoWIN ప్లాట్‌ఫామ్ విస్తృతంగా ఉపయోగించబడింది.",
+        "CoWIN डिजिटल प्लेटफॉर्म का व्यापक उपयोग 2021 में भारत के कोविड-19 टीकाकरण अभियान में हुआ।",
+        "PM-KISAN, an income support scheme for eligible farmer families, was launched in February 2019."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did Chandrayaan-3 landing happen before the 2023 G20 summit in New Delhi?",
+      "ground_truth": "Yes, August came before September 2023.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6127.09,
+      "graph_latency_ms": 10406.48,
+      "baseline_compute": {
+        "latency_ms": 6127.09,
+        "input_bytes": 73,
+        "output_bytes": 2559,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 533,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10406.48,
+        "input_bytes": 73,
+        "output_bytes": 10502,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 2201,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+        "இந்தியா 2023ல் G20 தலைமை வகித்தது; தலைவர்கள் உச்சி மாநாடு 9-10 செப்டம்பர் 2023 அன்று நியூ டெல்லியில் நடைபெற்றது."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Was GST launched after NEP 2020 approval?",
+      "ground_truth": "No, GST was in 2017 and NEP approval was in 2020.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5051.75,
+      "graph_latency_ms": 10196.59,
+      "baseline_compute": {
+        "latency_ms": 5051.75,
+        "input_bytes": 41,
+        "output_bytes": 2206,
+        "estimated_tokens_in": 10,
+        "estimated_tokens_out": 489,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10196.59,
+        "input_bytes": 41,
+        "output_bytes": 9184,
+        "estimated_tokens_in": 10,
+        "estimated_tokens_out": 2046,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "India's National Education Policy (NEP) 2020 was approved in July 2020.",
+        "இந்தியாவில் ஜிஎஸ்டி (GST) 1 ஜூலை 2017 அன்று அமல்படுத்தப்பட்டது.",
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform.",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।",
+        "राष्ट्रीय शिक्षा नीति 2020 को जुलाई 2020 में मंजूरी दी गई।"
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did Aditya-L1 launch in 2023 and reach halo orbit in 2024?",
+      "ground_truth": "Yes.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6948.13,
+      "graph_latency_ms": 10311.16,
+      "baseline_compute": {
+        "latency_ms": 6948.13,
+        "input_bytes": 58,
+        "output_bytes": 2524,
+        "estimated_tokens_in": 14,
+        "estimated_tokens_out": 521,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10311.16,
+        "input_bytes": 58,
+        "output_bytes": 10405,
+        "estimated_tokens_in": 14,
+        "estimated_tokens_out": 2161,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "ISRO launched Aditya-L1 on 2 September 2023 to study the Sun from a halo orbit around the L1 point.",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది.",
+        "आदित्य-एल1 मिशन 2 सितंबर 2023 को लॉन्च किया गया और जनवरी 2024 में L1 के पास हेलो ऑर्बिट में स्थापित हुआ।",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "Did India hold G20 presidency in the same year as Chandrayaan-3 landing?",
+      "ground_truth": "Yes, both are in 2023.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5670.85,
+      "graph_latency_ms": 10312.44,
+      "baseline_compute": {
+        "latency_ms": 5670.85,
+        "input_bytes": 72,
+        "output_bytes": 2326,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 515,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10312.44,
+        "input_bytes": 72,
+        "output_bytes": 9571,
+        "estimated_tokens_in": 18,
+        "estimated_tokens_out": 2128,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "India's National Education Policy (NEP) 2020 was approved in July 2020.",
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।"
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "क्या चंद्रयान-3 ने 23 अगस्त 2023 को दक्षिणी ध्रुव के पास लैंडिंग की?",
+      "ground_truth": "हाँ।",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6075.0,
+      "graph_latency_ms": 10694.54,
+      "baseline_compute": {
+        "latency_ms": 6075.0,
+        "input_bytes": 162,
+        "output_bytes": 2718,
+        "estimated_tokens_in": 17,
+        "estimated_tokens_out": 524,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10694.54,
+        "input_bytes": 162,
+        "output_bytes": 10869,
+        "estimated_tokens_in": 17,
+        "estimated_tokens_out": 2165,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।",
+        "आदित्य-एल1 मिशन 2 सितंबर 2023 को लॉन्च किया गया और जनवरी 2024 में L1 के पास हेलो ऑर्बिट में स्थापित हुआ।"
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "क्या चंद्रयान-3 की लैंडिंग 2024 में हुई थी?",
+      "ground_truth": "नहीं, 2023 में हुई थी।",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 7701.19,
+      "graph_latency_ms": 11009.13,
+      "baseline_compute": {
+        "latency_ms": 7701.19,
+        "input_bytes": 101,
+        "output_bytes": 2845,
+        "estimated_tokens_in": 10,
+        "estimated_tokens_out": 521,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 11009.13,
+        "input_bytes": 101,
+        "output_bytes": 11560,
+        "estimated_tokens_in": 10,
+        "estimated_tokens_out": 2173,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది.",
+        "आदित्य-एल1 मिशन 2 सितंबर 2023 को लॉन्च किया गया और जनवरी 2024 में L1 के पास हेलो ऑर्बिट में स्थापित हुआ।",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "क्या भारत ने 2023 में जी20 अध्यक्षता संभाली थी?",
+      "ground_truth": "हाँ।",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6260.27,
+      "graph_latency_ms": 10826.98,
+      "baseline_compute": {
+        "latency_ms": 6260.27,
+        "input_bytes": 111,
+        "output_bytes": 2445,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 477,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10826.98,
+        "input_bytes": 111,
+        "output_bytes": 9931,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 1996,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది.",
+        "CoWIN डिजिटल प्लेटफॉर्म का व्यापक उपयोग 2021 में भारत के कोविड-19 टीकाकरण अभियान में हुआ।",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।"
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "क्या जी20 शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ?",
+      "ground_truth": "हाँ।",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 7134.72,
+      "graph_latency_ms": 10625.65,
+      "baseline_compute": {
+        "latency_ms": 7134.72,
+        "input_bytes": 139,
+        "output_bytes": 2736,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 522,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10625.65,
+        "input_bytes": 139,
+        "output_bytes": 11015,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 2166,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।",
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది.",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "இந்தியா 2023ல் G20 தலைமை வகித்தது; தலைவர்கள் உச்சி மாநாடு 9-10 செப்டம்பர் 2023 அன்று நியூ டெல்லியில் நடைபெற்றது.",
+        "आदित्य-एल1 मिशन 2 सितंबर 2023 को लॉन्च किया गया और जनवरी 2024 में L1 के पास हेलो ऑर्बिट में स्थापित हुआ।"
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "क्या GST 1 जुलाई 2017 को लागू हुआ था?",
+      "ground_truth": "हाँ।",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 5688.95,
+      "graph_latency_ms": 10661.54,
+      "baseline_compute": {
+        "latency_ms": 5688.95,
+        "input_bytes": 77,
+        "output_bytes": 2223,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 464,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10661.54,
+        "input_bytes": 77,
+        "output_bytes": 9145,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 1950,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "இந்தியாவில் ஜிஎஸ்டி (GST) 1 ஜூலை 2017 அன்று அமல்படுத்தப்பட்டது.",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।",
+        "The Goods and Services Tax (GST) was launched in India on 1 July 2017 as an indirect tax reform.",
+        "భారతదేశంలో జీఎస్టీ 1 జూలై 2017న అమల్లోకి వచ్చింది.",
+        "राष्ट्रीय शिक्षा नीति 2020 को जुलाई 2020 में मंजूरी दी गई।"
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "क्या पीएम-किसान योजना 2021 में शुरू हुई थी?",
+      "ground_truth": "नहीं, 2019 में शुरू हुई थी।",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6365.7,
+      "graph_latency_ms": 10452.55,
+      "baseline_compute": {
+        "latency_ms": 6365.7,
+        "input_bytes": 103,
+        "output_bytes": 2371,
+        "estimated_tokens_in": 10,
+        "estimated_tokens_out": 456,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10452.55,
+        "input_bytes": 103,
+        "output_bytes": 9658,
+        "estimated_tokens_in": 10,
+        "estimated_tokens_out": 1915,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "पीएम-किसान योजना फरवरी 2019 में शुरू की गई थी।",
+        "PM-KISAN திட்டம் தகுதியான விவசாய குடும்பங்களுக்கு 2019 பிப்ரவரியில் தொடங்கப்பட்டது.",
+        "CoWIN डिजिटल प्लेटफॉर्म का व्यापक उपयोग 2021 में भारत के कोविड-19 टीकाकरण अभियान में हुआ।",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "The CoWIN digital platform was widely used to manage India's COVID-19 vaccination rollout in 2021."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று வெற்றிகரமாக தரையிறங்கியதா?",
+      "ground_truth": "ஆம்.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 8423.96,
+      "graph_latency_ms": 10344.6,
+      "baseline_compute": {
+        "latency_ms": 8423.96,
+        "input_bytes": 150,
+        "output_bytes": 2829,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 530,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10344.6,
+        "input_bytes": 150,
+        "output_bytes": 11349,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 2196,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
       "contexts": [
         "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+        "ஜல் ஜீவன் மிஷன் ஆகஸ்ட் 2019ல் அறிவிக்கப்பட்டது; கிராமப்புற வீடுகளுக்கு குழாய் நீர் இணைப்பை வழங்குவது இதன் நோக்கம்.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "இந்தியா 2023ல் G20 தலைமை வகித்தது; தலைவர்கள் உச்சி மாநாடு 9-10 செப்டம்பர் 2023 அன்று நியூ டெல்லியில் நடைபெற்றது."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "சந்திரயான்-3 2024ல் தரையிறங்கியதா?",
+      "ground_truth": "இல்லை, 2023ல்.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 7290.67,
+      "graph_latency_ms": 10767.43,
+      "baseline_compute": {
+        "latency_ms": 7290.67,
+        "input_bytes": 84,
+        "output_bytes": 2649,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 511,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10767.43,
+        "input_bytes": 84,
+        "output_bytes": 10828,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 2140,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
         "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
-        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
-        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
-        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது."
+        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
+        "चंद्रयान-3 ने 23 अगस्त 2023 को चंद्रमा के दक्षिणी ध्रुव के पास सफल सॉफ्ट लैंडिंग की।",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "இந்தியா 2023ல் G20 தலைமை வகித்ததா?",
+      "ground_truth": "ஆம்.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6884.87,
+      "graph_latency_ms": 10614.21,
+      "baseline_compute": {
+        "latency_ms": 6884.87,
+        "input_bytes": 78,
+        "output_bytes": 2457,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 496,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10614.21,
+        "input_bytes": 78,
+        "output_bytes": 10078,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 2082,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "இந்தியா 2023ல் G20 தலைமை வகித்தது; தலைவர்கள் உச்சி மாநாடு 9-10 செப்டம்பர் 2023 அன்று நியூ டெல்லியில் நடைபெற்றது.",
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది.",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "ஜிஎஸ்டி 1 ஜூலை 2017 அன்று அறிமுகமானதா?",
+      "ground_truth": "ஆம்.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 7845.33,
+      "graph_latency_ms": 11012.91,
+      "baseline_compute": {
+        "latency_ms": 7845.33,
+        "input_bytes": 92,
+        "output_bytes": 2512,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 478,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 11012.91,
+        "input_bytes": 92,
+        "output_bytes": 10256,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 2006,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "இந்தியாவில் ஜிஎஸ்டி (GST) 1 ஜூலை 2017 அன்று அமல்படுத்தப்பட்டது.",
+        "భారతదేశంలో జీఎస్టీ 1 జూలై 2017న అమల్లోకి వచ్చింది.",
+        "भारत में वस्तु एवं सेवा कर (GST) 1 जुलाई 2017 को लागू किया गया।",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "జీఎస్టీ 2020లో ప్రారంభించబడిందా?",
+      "ground_truth": "కాదు, 2017లో అమలులోకి వచ్చింది.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6780.38,
+      "graph_latency_ms": 10783.55,
+      "baseline_compute": {
+        "latency_ms": 6780.38,
+        "input_bytes": 82,
+        "output_bytes": 2203,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 445,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10783.55,
+        "input_bytes": 82,
+        "output_bytes": 9051,
+        "estimated_tokens_in": 8,
+        "estimated_tokens_out": 1878,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "భారతదేశంలో జీఎస్టీ 1 జూలై 2017న అమల్లోకి వచ్చింది.",
+        "జాతీయ విద్యా విధానం 2020 జూలై 2020లో ఆమోదించబడింది.",
+        "PM-KISAN திட்டம் தகுதியான விவசாய குடும்பங்களுக்கு 2019 பிப்ரவரியில் தொடங்கப்பட்டது.",
+        "இந்திய தேசிய கல்விக் கொள்கை 2020, ஜூலை 2020ல் அங்கீகரிக்கப்பட்டது.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023."
       ],
       "baseline_score": 0.5,
       "graph_score": 0.0
@@ -105,24 +1349,192 @@
     {
       "query": "చంద్రయాన్-3 23 ఆగస్టు 2023న దక్షిణ ధ్రువం సమీపంలో ల్యాండైందా?",
       "ground_truth": "అవును.",
-      "baseline_status": "VERIFIED",
-      "graph_status": "VERIFIED",
-      "baseline_answer": "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
-      "graph_answer": "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
-      "baseline_latency_ms": 38.94,
-      "graph_latency_ms": 60.72,
-      "graph_loop_count": 0,
-      "critic_latency_ms": 0.1511000155005604,
-      "critic_calls": 1,
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 8669.15,
+      "graph_latency_ms": 10890.42,
+      "baseline_compute": {
+        "latency_ms": 8669.15,
+        "input_bytes": 151,
+        "output_bytes": 2711,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 519,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10890.42,
+        "input_bytes": 151,
+        "output_bytes": 10876,
+        "estimated_tokens_in": 15,
+        "estimated_tokens_out": 2152,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
       "contexts": [
         "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
-        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
-        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
-        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది.",
-        "చంద్రయాన్-3 23 ఆగస్టు 2023న చంద్రుడి దక్షిణ ధ్రువం సమీపంలో విజయవంతంగా ల్యాండైంది."
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "జల్ జీవన్ మిషన్ ఆగస్టు 2019లో ప్రకటించబడింది; గ్రామీణ ఇళ్లకు ట్యాప్ నీటి కనెక్షన్ లక్ష్యం.",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023.",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది."
       ],
-      "baseline_score": 1.0,
-      "graph_score": 1.0
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "భారతదేశం 2023లో G20 అధ్యక్షత వహించిందా?",
+      "ground_truth": "అవును.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 7081.88,
+      "graph_latency_ms": 10694.38,
+      "baseline_compute": {
+        "latency_ms": 7081.88,
+        "input_bytes": 93,
+        "output_bytes": 2460,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 495,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10694.38,
+        "input_bytes": 93,
+        "output_bytes": 10046,
+        "estimated_tokens_in": 9,
+        "estimated_tokens_out": 2072,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "భారతదేశం 2023లో G20 అధ్యక్షత వహించింది; నాయకుల సదస్సు 9-10 సెప్టెంబర్ 2023న న్యూఢిల్లీ లో జరిగింది.",
+        "India held the G20 Presidency in 2023, and the G20 Leaders' Summit was hosted in New Delhi on 9-10 September 2023.",
+        "இந்தியா 2023ல் G20 தலைமை வகித்தது; தலைவர்கள் உச்சி மாநாடு 9-10 செப்டம்பர் 2023 அன்று நியூ டெல்லியில் நடைபெற்றது.",
+        "भारत ने 2023 में जी20 अध्यक्षता संभाली और शिखर सम्मेलन 9-10 सितंबर 2023 को नई दिल्ली में हुआ।",
+        "The Chandrayaan-3 mission by ISRO successfully soft-landed near the lunar south pole on 23 August 2023."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "జల్ జీవన్ మిషన్ 2019 ఆగస్టులో ప్రకటించబడిందా?",
+      "ground_truth": "అవును.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 9221.63,
+      "graph_latency_ms": 10927.34,
+      "baseline_compute": {
+        "latency_ms": 9221.63,
+        "input_bytes": 115,
+        "output_bytes": 2693,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 478,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10927.34,
+        "input_bytes": 115,
+        "output_bytes": 10911,
+        "estimated_tokens_in": 11,
+        "estimated_tokens_out": 2000,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "జల్ జీవన్ మిషన్ ఆగస్టు 2019లో ప్రకటించబడింది; గ్రామీణ ఇళ్లకు ట్యాప్ నీటి కనెక్షన్ లక్ష్యం.",
+        "PM-KISAN திட்டம் தகுதியான விவசாய குடும்பங்களுக்கு 2019 பிப்ரவரியில் தொடங்கப்பட்டது.",
+        "சந்திரயான்-3 23 ஆகஸ்ட் 2023 அன்று நிலவின் தெற்கு துருவம் அருகே வெற்றிகரமாக தரையிறங்கியது.",
+        "ஆதித்யா-L1 2 செப்டம்பர் 2023 அன்று ஏவப்பட்டது; அது 2024 ஜனவரியில் L1 ஹாலோ சுற்றுப்பாதையில் நிலைநிறுத்தப்பட்டது.",
+        "ఆదిత్య-L1ను 2 సెప్టెంబర్ 2023న ప్రయోగించారు; ఇది 2024 జనవరిలో L1 హాలో కక్ష్యలో ప్రవేశించింది."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "జాతీయ విద్యా విధానం 2020 జూలై 2020లో ఆమోదించబడిందా?",
+      "ground_truth": "అవును.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 6457.78,
+      "graph_latency_ms": 10786.41,
+      "baseline_compute": {
+        "latency_ms": 6457.78,
+        "input_bytes": 123,
+        "output_bytes": 2255,
+        "estimated_tokens_in": 12,
+        "estimated_tokens_out": 464,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10786.41,
+        "input_bytes": 123,
+        "output_bytes": 9136,
+        "estimated_tokens_in": 12,
+        "estimated_tokens_out": 1940,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "జాతీయ విద్యా విధానం 2020 జూలై 2020లో ఆమోదించబడింది.",
+        "राष्ट्रीय शिक्षा नीति 2020 को जुलाई 2020 में मंजूरी दी गई।",
+        "இந்திய தேசிய கல்விக் கொள்கை 2020, ஜூலை 2020ல் அங்கீகரிக்கப்பட்டது.",
+        "India's National Education Policy (NEP) 2020 was approved in July 2020.",
+        "భారతదేశంలో జీఎస్టీ 1 జూలై 2017న అమల్లోకి వచ్చింది."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
+    },
+    {
+      "query": "CoWIN వేదిక 2021లో టీకా కార్యక్రమంలో ఉపయోగించబడిందా?",
+      "ground_truth": "అవును.",
+      "baseline_status": "KNOWLEDGE_GAP",
+      "graph_status": "CANNOT_VERIFY",
+      "baseline_answer": "",
+      "graph_answer": "Cannot verify after 3 critic-rejected refinement loops.",
+      "baseline_latency_ms": 7347.68,
+      "graph_latency_ms": 10805.66,
+      "baseline_compute": {
+        "latency_ms": 7347.68,
+        "input_bytes": 126,
+        "output_bytes": 2579,
+        "estimated_tokens_in": 13,
+        "estimated_tokens_out": 501,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_compute": {
+        "latency_ms": 10805.66,
+        "input_bytes": 126,
+        "output_bytes": 10423,
+        "estimated_tokens_in": 13,
+        "estimated_tokens_out": 2087,
+        "flops_per_byte": 4000000000.0
+      },
+      "graph_loop_count": 3,
+      "critic_latency_ms": 0.0,
+      "critic_calls": 0,
+      "contexts": [
+        "భారతదేశ COVID-19 టీకా కార్యక్రమం 2021లో CoWIN ప్లాట్‌ఫామ్ విస్తృతంగా ఉపయోగించబడింది.",
+        "CoWIN डिजिटल प्लेटफॉर्म का व्यापक उपयोग 2021 में भारत के कोविड-19 टीकाकरण अभियान में हुआ।",
+        "The CoWIN digital platform was widely used to manage India's COVID-19 vaccination rollout in 2021.",
+        "இந்தியாவின் COVID-19 தடுப்பூசி இயக்கத்தில் 2021ஆம் ஆண்டு CoWIN தளம் பரவலாக பயன்படுத்தப்பட்டது.",
+        "PM-KISAN திட்டம் தகுதியான விவசாய குடும்பங்களுக்கு 2019 பிப்ரவரியில் தொடங்கப்பட்டது."
+      ],
+      "baseline_score": 0.5,
+      "graph_score": 0.0
     }
   ]
 }

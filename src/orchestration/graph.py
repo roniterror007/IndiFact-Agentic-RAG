@@ -51,15 +51,26 @@ def build_graph(indexer: IndicHybridIndexer):
         metrics = dict(state.get("metrics", {}))
         metrics["analyst_calls"] = int(metrics.get("analyst_calls", 0)) + 1
         metrics["analyst_latency_ms"] = float(metrics.get("analyst_latency_ms", 0.0)) + elapsed_ms
+
+        next_loop_count = state["loop_count"]
+        if draft.get("status") == "KNOWLEDGE_GAP":
+            next_loop_count += 1
+
         history = state.get("history", []) + [
             {
                 "agent": "Analyst",
                 "loop": state["loop_count"],
                 "draft_answer": draft,
+                "next_loop_count": next_loop_count,
                 "latency_ms": round(elapsed_ms, 2),
             }
         ]
-        return {"draft_answer": draft, "history": history, "metrics": metrics}
+        return {
+            "draft_answer": draft,
+            "loop_count": next_loop_count,
+            "history": history,
+            "metrics": metrics,
+        }
 
     def critic_node(state: AgentState) -> Dict[str, Any]:
         t0 = time.perf_counter()
@@ -135,6 +146,14 @@ def build_graph(indexer: IndicHybridIndexer):
             return "cannot_verify"
         return "searcher"
 
+    def route_after_analyst(state: AgentState) -> str:
+        status = state.get("draft_answer", {}).get("status", "KNOWLEDGE_GAP")
+        if status == "VERIFIED":
+            return "critic"
+        if state.get("loop_count", 0) >= 3:
+            return "cannot_verify"
+        return "searcher"
+
     graph = StateGraph(AgentState)
 
     graph.add_node("searcher", searcher_node)
@@ -145,7 +164,15 @@ def build_graph(indexer: IndicHybridIndexer):
 
     graph.add_edge(START, "searcher")
     graph.add_edge("searcher", "analyst")
-    graph.add_edge("analyst", "critic")
+    graph.add_conditional_edges(
+        "analyst",
+        route_after_analyst,
+        {
+            "searcher": "searcher",
+            "cannot_verify": "cannot_verify",
+            "critic": "critic",
+        },
+    )
 
     graph.add_conditional_edges(
         "critic",
